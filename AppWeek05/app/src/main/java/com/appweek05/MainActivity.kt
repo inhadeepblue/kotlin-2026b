@@ -1,10 +1,11 @@
 package com.appweek05
 
+import android.util.Log
 import android.os.Bundle
-import android.widget.EditText
+import android.view.View
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -12,27 +13,22 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val textViewResult = findViewById<TextView>(R.id.tvResult)
-        val buttonCalculate = findViewById<Button>(R.id.btnCalculate)
-        val editTextDan = findViewById<EditText>(R.id.etDan)
+        val editTextName = findViewById<EditText>(R.id.editTextName)
+        val buttonGreet = findViewById<Button>(R.id.buttonGreet)
+        val textViewGreeting = findViewById<TextView>(R.id.textViewGreeting)
 
-         buttonCalculate.setOnClickListener {
-             val inputText = editTextDan.text.toString()
+        buttonGreet.setOnClickListener {
+            val name = editTextName.text.toString().trim()
 
-             if(inputText.isEmpty()){
-                 Toast.makeText(this, "숫자 입력하세요", Toast.LENGTH_LONG).show()
-                 return@setOnClickListener
-             }
-
-             val dan = inputText.toInt()
-             val result = StringBuilder()
-             result.append("==== $dan 단 ====\n\n")
-
-             for(i in 1..9){
-                 result.append("$dan x $i = ${dan * i}\n")
-             }
-
-             textViewResult.text = result.toString()
-         }
+            var greeting: String = ""
+            if(name.isNotEmpty()){
+                greeting = "안녕, ${name}님~"
+            }else{
+                greeting = "너의 이름은?"
+            }
+            textViewGreeting.text = greeting
+            textViewGreeting.visibility = View.VISIBLE
+            Log.d("KotlinWeek05App", greeting)
+        }
     }
 }
