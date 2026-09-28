@@ -8,6 +8,7 @@
     android:orientation="vertical">
 
     <EditText
+        android:id="@+id/etDan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="단 입력(예: 5) : "
