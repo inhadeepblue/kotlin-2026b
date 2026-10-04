@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layoutMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="색깔 변경 앱"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewCurrentColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 색: 흰색"
+        android:textSize="18sp"
+        android:layout_marginBottom="32dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <Button
+            android:id="@+id/buttonRed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="빨강"
+            android:backgroundTint="#FF0000"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonGreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초록"
+            android:backgroundTint="#00FF00"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonBlue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="파랑"
+            android:backgroundTint="#0000FF"
+            android:layout_margin="4dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="초기화"/>
+
+</LinearLayout>
