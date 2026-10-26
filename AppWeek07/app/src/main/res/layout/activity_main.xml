@@ -1,118 +1,212 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#f5f5f5">
+    android:background="#f8f9fa">
 
-    <!-- Title -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Student List Manager"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#2196F3"
-        android:gravity="center"
-        android:layout_marginBottom="16dp" />
-
-    <!-- Input section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="8dp">
+        android:orientation="vertical"
+        android:padding="16dp">
 
-        <EditText
-            android:id="@+id/editTextStudent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Enter student name"
-            android:inputType="textPersonName"
-            android:background="@android:drawable/edit_text"
-            android:padding="12dp"
-            android:textSize="16sp"
-            android:layout_marginEnd="8dp" />
-
-        <Button
-            android:id="@+id/buttonAdd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ADD"
-            android:textSize="14sp"
-            android:backgroundTint="#4CAF50"
-            android:textColor="#FFFFFF"
-            android:minWidth="80dp" />
-
-    </LinearLayout>
-
-    <!-- Control buttons -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginBottom="16dp">
-
-        <Button
-            android:id="@+id/buttonClear"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="CLEAR ALL"
-            android:textSize="14sp"
-            android:backgroundTint="#F44336"
-            android:textColor="#FFFFFF"
-            android:layout_marginEnd="8dp" />
-
+        <!-- Title -->
         <TextView
-            android:id="@+id/textViewCount"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Total Students: 0"
-            android:textSize="16sp"
+            android:text="Multi-Mode App Manager"
+            android:textSize="28sp"
             android:textStyle="bold"
-            android:textColor="#FF5722"
+            android:textColor="#2c3e50"
             android:gravity="center"
-            android:background="#FFFFFF"
-            android:padding="12dp"
-            android:layout_marginStart="8dp" />
+            android:layout_marginBottom="20dp" />
+
+        <!-- Mode Selection -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Select Mode:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#34495e"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp">
+
+            <RadioButton
+                android:id="@+id/radioStudentList"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Student\nList"
+                android:textSize="14sp"
+                android:checked="true"
+                android:buttonTint="#3498db"
+                android:gravity="center" />
+
+            <RadioButton
+                android:id="@+id/radioShoppingCart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Shopping\nCart"
+                android:textSize="14sp"
+                android:buttonTint="#e74c3c"
+                android:gravity="center" />
+        </RadioGroup>
+
+        <!-- Main Input Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+
+            <EditText
+                android:id="@+id/editTextInput"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Enter item"
+                android:inputType="textCapWords"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:textSize="16sp"
+                android:layout_marginEnd="8dp" />
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD"
+                android:textSize="14sp"
+                android:backgroundTint="#2ecc71"
+                android:textColor="#FFFFFF"
+                android:minWidth="100dp" />
+
+        </LinearLayout>
+
+        <!-- Shopping Cart Controls (Initially Hidden) -->
+        <LinearLayout
+            android:id="@+id/layoutCartControls"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp"
+            android:visibility="gone">
+
+            <EditText
+                android:id="@+id/editTextPrice"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Price ($)"
+                android:inputType="numberDecimal"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:layout_marginEnd="4dp" />
+
+            <EditText
+                android:id="@+id/editTextQuantity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Qty"
+                android:inputType="number"
+                android:background="@android:drawable/edit_text"
+                android:padding="12dp"
+                android:textSize="14sp"
+                android:layout_marginStart="4dp" />
+
+        </LinearLayout>
+
+
+        <!-- Control Buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="16dp">
+
+            <Button
+                android:id="@+id/buttonClear"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="CLEAR ALL"
+                android:textSize="14sp"
+                android:backgroundTint="#e74c3c"
+                android:textColor="#FFFFFF"
+                android:layout_marginEnd="8dp" />
+
+            <TextView
+                android:id="@+id/textViewInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Total: 0"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#e67e22"
+                android:gravity="center"
+                android:background="#ffffff"
+                android:padding="12dp"
+                android:layout_marginStart="8dp"
+                android:elevation="2dp" />
+
+        </LinearLayout>
+
+        <!-- Instructions -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap to interact • Long press to delete"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="#7f8c8d"
+            android:gravity="center"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Main ListView -->
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:background="#ffffff"
+            android:divider="#ecf0f1"
+            android:dividerHeight="1dp"
+            android:choiceMode="singleChoice"
+            android:listSelector="#e8f4f8"
+            android:padding="8dp"
+            android:elevation="2dp" />
+
+        <!-- Mode-specific Help Text -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Student List: Add and manage students\nShopping Cart: Add items with price and quantity"
+            android:textSize="12sp"
+            android:textColor="#95a5a6"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:lineSpacingExtra="2dp" />
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Week 06: Git Branching and Feature Integration"
+            android:textSize="12sp"
+            android:textColor="#bdc3c7"
+            android:gravity="center"
+            android:layout_marginTop="12dp" />
 
     </LinearLayout>
 
-    <!-- Instructions -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tap to select • Long press to delete"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        android:textColor="#757575"
-        android:gravity="center"
-        android:layout_marginBottom="8dp" />
-
-    <!-- ListView -->
-    <ListView
-        android:id="@+id/listViewStudents"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:divider="#E0E0E0"
-        android:dividerHeight="1dp"
-        android:choiceMode="singleChoice"
-        android:listSelector="#E3F2FD" />
-
-    <!-- Footer info -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Week05 : ListView and Data Handling"
-        android:textSize="12sp"
-        android:textColor="#9E9E9E"
-        android:gravity="center"
-        android:layout_marginTop="8dp" />
-
-</LinearLayout>
+</ScrollView>
