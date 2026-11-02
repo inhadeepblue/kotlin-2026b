@@ -50,11 +50,11 @@
                 android:gravity="center" />
 
             <RadioButton
-                android:id="@+id/radioShoppingCart"
+                android:id="@+id/radioTaskManager"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Shopping\nCart"
+                android:text="Task\nManager"
                 android:textSize="14sp"
                 android:buttonTint="#e74c3c"
                 android:gravity="center" />
@@ -91,38 +91,48 @@
 
         </LinearLayout>
 
-        <!-- Shopping Cart Controls (Initially Hidden) -->
+        <!-- Task Manager Controls (Initially Hidden) -->
         <LinearLayout
-            android:id="@+id/layoutCartControls"
+            android:id="@+id/layoutTaskControls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_marginBottom="12dp"
             android:visibility="gone">
 
             <EditText
-                android:id="@+id/editTextPrice"
-                android:layout_width="0dp"
+                android:id="@+id/editTextDescription"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Price ($)"
-                android:inputType="numberDecimal"
+                android:hint="Task description (optional)"
+                android:inputType="textCapSentences"
                 android:background="@android:drawable/edit_text"
                 android:padding="12dp"
                 android:textSize="14sp"
-                android:layout_marginEnd="4dp" />
+                android:layout_marginBottom="8dp"
+                android:maxLines="2" />
 
-            <EditText
-                android:id="@+id/editTextQuantity"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="Qty"
-                android:inputType="number"
-                android:background="@android:drawable/edit_text"
-                android:padding="12dp"
-                android:textSize="14sp"
-                android:layout_marginStart="4dp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Priority:"
+                    android:textSize="16sp"
+                    android:textColor="#2c3e50"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginEnd="12dp" />
+
+                <Spinner
+                    android:id="@+id/spinnerPriority"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -190,7 +200,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Student List: Add and manage students\nShopping Cart: Add items with price and quantity"
+            android:text="Student List: Add and manage students\nTask Manager : Create tasks with priority levels"
             android:textSize="12sp"
             android:textColor="#95a5a6"
             android:gravity="center"
