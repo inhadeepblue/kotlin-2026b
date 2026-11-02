@@ -9,6 +9,20 @@ data class Student(
     val addedDate: Date = Date()
 )
 
+data class CartItem(
+    val name: String,
+    var quantity: Int = 1,
+    val price: Double,
+    val id: String = UUID.randomUUID().toString(),
+    val addedDate: Date = Date()
+) {
+    fun getTotalPrice(): Double = quantity * price
+
+    override fun toString(): String {
+        return "$name (x$quantity) - $%.2f".format(getTotalPrice())
+    }
+}
+
 data class Task(
     val title: String,
     val description: String = "",
@@ -37,5 +51,6 @@ enum class TaskPriority(val displayName: String, val color: Int){
 
 enum class AppMode(val displayName: String) {
     STUDENT_LIST("Student List"),
+    SHOPPING_CART("Shopping Cart"),
     TASK_MANAGER("Task Manager"),
 }
