@@ -1,19 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#f5f7fa">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="RecyclerView Student Manager"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#2c3e50"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="8dp">
+
+        <EditText
+            android:id="@+id/editTextStudent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Enter student name"
+            android:inputType="textCapWords"
+            android:padding="12dp"
+            android:textSize="16sp"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ADD"
+            android:textSize="14sp"
+            android:backgroundTint="#27ae60"
+            android:textColor="#FFFFFF"
+            android:minWidth="80dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Layout:"
+            android:textSize="16sp"
+            android:textColor="#2c3e50"
+            android:layout_marginEnd="8dp" />
+
+        <Spinner
+            android:id="@+id/spinnerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginEnd="8dp" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CLEAR"
+            android:textSize="12sp"
+            android:backgroundTint="#e74c3c"
+            android:textColor="#FFFFFF"
+            android:padding="8dp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Total Students: 0"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#e67e22"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:padding="12dp"
+        android:layout_marginBottom="12dp"
+        android:elevation="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tap to view details • Long press to delete"
+        android:textSize="13sp"
+        android:textStyle="italic"
+        android:textColor="#7f8c8d"
+        android:gravity="center"
+        android:layout_marginBottom="8dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:padding="8dp"
+        android:elevation="2dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Week 10: RecyclerView Introduction"
+        android:textSize="12sp"
+        android:textColor="#bdc3c7"
+        android:gravity="center"
+        android:layout_marginTop="12dp" />
+
+</LinearLayout>
